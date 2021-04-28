@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css" media="screen">
+    <script src="https://kit.fontawesome.com/b5b3392b53.js" crossorigin="anonymous"></script>
+  </head>
+  <body style="background-color: #1E1E1E">
+  <audio id="loading" src="music/music.mp3" autoplay="true" hidden="true" loop="true"></audio>
+    <section class="u-image u-section-1">
+            <div class="u-layout-row">
+              <div class="u-size-27-xl">
+                <div class="box server-info">
+                  <h2>Informations</h2>
+                  <ul>
+                      <li>
+                        <i id="color-icon" class="fas fa-map"></i> | Los Santos
+                      </li>
+                      <li>
+                        <i id="color-icon" class="fas fa-gamepad"></i> | Roleplay
+                      </li>
+                      <li>
+                        <i id="color-icon" class="fab fa-discord"></i> | C3aN2bBVbB
+                      </li>
+                      <li>
+                        <i id="color-icon" class="fas fa-globe"></i> | XLife.fr
+                      </li>
+                  </ul>
+              </div>
+              </div>
+              <div>
+                  <img src="images/player.png" width="100%">
+              </div>
+            </div>
+          </div>
+    </section>
+    <script>
+      var play = false;
+              var vid = document.getElementById("loading");
+              vid.volume = 0.1;
+              window.addEventListener('keyup', function(e)
+              {
+                  if (e.which == 69){
+                      vid.volume = Math.min(vid.volume + 0.1,1);
+                  } else if(e.which == 65){
+                      vid.volume = Math.max(vid.volume - 0.1,0);
+                  };
+              });
+      
+              var audio = document.querySelector('audio');
+      
+              if (audio) {
+      
+              window.addEventListener('keydown', function (event) {
+      
+              var key = event.which || event.keyCode;
+      
+              if (key === 32) { // spacebar
+      
+              event.preventDefault();
+      
+              audio.paused ? audio.play() : audio.pause();
+            
+          }
+      
+        });
+      }
+      </script>
+  </body>
+</html>
